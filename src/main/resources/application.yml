@@ -1,0 +1,49 @@
+server:
+  port: 8880
+  undertow:
+    io-threads: 2
+    worker-threads: 200
+
+app:
+  datasource:
+    name: jd
+    host: localhost
+    username: root
+    password: 123456
+
+spring:
+  mvc:
+    favicon:
+      enabled: false
+    view:
+      prefix: /
+      suffix: .html
+  application:
+    name: major-consumer
+  profiles:
+    include:
+    - web
+    - locale
+    - mybatisplus
+  datasource:
+    name: ${app.datasource.name}
+    url: jdbc:mysql://${app.datasource.host}/${app.datasource.name}?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true
+    username: ${app.datasource.username}
+    password: ${app.datasource.password}
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+
+mybatis:
+  typeAliasesPackage : "cn.minqi.consumer.entity"
+  #checkConfig-location : false
+  mapper-locations : "classpath:cn/minqi/consumer/mapper/xml/*Mapper.xml"
+
+
+logging:
+  level:
+    org.springframework.web: INFO
+    cn.minqi: DEBUG
+  pattern:
+    console: "%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %highlight(%-5level) %cyan(%logger{36})  - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  file: logs/application.log

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.minqi.consumer.mapper.UserMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="cn.minqi.consumer.entity.User">
+		<id column="id" property="id" />
+		<result column="user_name" property="userName" />
+		<result column="user_phone" property="userPhone" />
+		<result column="user_email" property="userEmail" />
+		<result column="user_password" property="userPassword" />
+		<result column="certificates_number" property="certificatesNumber" />
+		<result column="account_number" property="accountNumber" />
+		<result column="wechat" property="wechat" />
+		<result column="avatar" property="avatar" />
+		<result column="ext1_user" property="ext1User" />
+		<result column="ext2_user" property="ext2User" />
+		<result column="ext3_user" property="ext3User" />
+		<result column="ext4_user" property="ext4User" />
+		<result column="ext5_user" property="ext5User" />
+		<result column="remark" property="remark" />
+		<result column="created_time" property="createdTime" />
+		<result column="updated_time" property="updatedTime" />
+		<result column="created_by" property="createdBy" />
+		<result column="updated_by" property="updatedBy" />
+		<result column="deleted" property="deleted" />
+		<result column="province" property="province" />
+		<result column="city" property="city" />
+		<result column="district" property="district" />
+		<result column="detail_address" property="detailAddress" />
+		<result column="province_code" property="provinceCode" />
+		<result column="city_code" property="cityCode" />
+		<result column="district_code" property="districtCode" />
+	</resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, user_name AS userName, user_phone AS userPhone, user_email AS userEmail, user_password AS userPassword, certificates_number AS certificatesNumber, account_number AS accountNumber, wechat, avatar, ext1_user AS ext1User, ext2_user AS ext2User, ext3_user AS ext3User, ext4_user AS ext4User, ext5_user AS ext5User, remark, created_time AS createdTime, updated_time AS updatedTime, created_by AS createdBy, updated_by AS updatedBy, deleted, province, city, district, detail_address AS detailAddress, province_code AS provinceCode, city_code AS cityCode, district_code AS districtCode
+    </sql>
+
+</mapper>

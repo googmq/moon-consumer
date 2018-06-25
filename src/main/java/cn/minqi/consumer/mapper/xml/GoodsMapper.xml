@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.minqi.consumer.mapper.GoodsMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="cn.minqi.consumer.entity.Goods">
+		<id column="id" property="id" />
+		<result column="goods_name" property="goodsName" />
+		<result column="shop_name" property="shopName" />
+		<result column="goods_price" property="goodsPrice" />
+		<result column="count" property="count" />
+		<result column="url" property="url" />
+		<result column="time" property="time" />
+	</resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, goods_name AS goodsName, shop_name AS shopName, goods_price AS goodsPrice, count, url, time
+    </sql>
+
+</mapper>
