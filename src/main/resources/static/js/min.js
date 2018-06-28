@@ -69,3 +69,12 @@ $(function(){
     	    });
 	});
 })
+
+$(function(){
+	$("#btn1").click(function(){
+	    console.log("aaaa")
+	    var email = $("#input_mail").val();
+		console.log(email);
+
+	});
+})

@@ -20,6 +20,15 @@ spring:
   data:
     mongodb:
       uri: mongodb://localhost:27017/test
+  mail:
+      host: smtp.qq.com
+      username: 357444224@qq.com
+      password: ukecrawoanancaaa
+      properties:
+          mail:
+              smtp:
+                  auth: true
+                  timeout: 25000
 
 mybatis:
   typeAliasesPackage : "cn.minqi.consumer.entity"

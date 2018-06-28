@@ -1,6 +1,9 @@
 package cn.minqi.consumer.web;
 
+import cn.minqi.consumer.constant.Constant;
 import cn.minqi.consumer.entity.Picture;
+import cn.minqi.consumer.entity.User;
+import cn.minqi.consumer.majorService.EmailServiceImpl;
 import cn.minqi.consumer.majorService.MoonService;
 import cn.minqi.consumer.model.BaseResponse;
 import cn.minqi.consumer.model.request.PicturePageParam;
@@ -20,6 +23,7 @@ public class MoonController {
 
     private MoonService moonService;
 
+    private EmailServiceImpl emailService;
 
     @RequestMapping(value = "/queryDesc", method = RequestMethod.POST)
     public BaseResponse queryTitle(@RequestBody Picture model) {
@@ -48,5 +52,12 @@ public class MoonController {
         BaseResponse response = moonService.queryAllByPage(pageRequest);
         log.info("findPage返回 :" + JSONObject.toJSONString(response));
         return response;
+    }
+
+    @RequestMapping(value = "/mail", method = RequestMethod.POST)
+    public BaseResponse mail(@RequestBody User user) {
+        log.info("mail入口");
+        log.info("mail入参 :" + JSONObject.toJSONString(user));
+        return emailService.sendSimpleMail(user);
     }
 }
