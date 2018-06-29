@@ -9,7 +9,7 @@ $(function(){
                		$.ajax({
                		       contentType:"application/json",
                	  	       type: "post",
-               	  	       url: "http://localhost:8880/mail",
+               	  	       url: "http://47.106.186.255/mail",
                	  	       data: JSON.stringify({"userEmail":email}),
                	  	       async:true,
                	 	       success: function(d){

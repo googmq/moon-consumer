@@ -5,7 +5,7 @@ var total = 1
 $.ajax({
         contentType:"application/json",
         type: "post",
-        url: "http://localhost:8880/findPage",
+        url: "http://47.106.186.255/findPage",
         data: JSON.stringify({"pageNumber":page,"pageSize" : size}),
         async:true,
         success: function(d){
@@ -20,16 +20,15 @@ $.ajax({
 
 $(function(){
 	$("#b1").click(function(){
-			console.log("aaa");
 			if(page>1){
 			    page = page-1
 			}else{
-			    page = total
+			    page = 1
 			}
     		$.ajax({
     		       contentType:"application/json",
     	  	       type: "post",
-    	  	       url: "http://localhost:8880/findPage",
+    	  	       url: "http://47.106.186.255/findPage",
     	  	       data: JSON.stringify({"pageNumber":page,"pageSize" : size}),
     	  	       async:true,
     	 	       success: function(d){
@@ -46,7 +45,6 @@ $(function(){
 
 $(function(){
 	$("#b2").click(function(){
-			console.log("bbb");
 			if(page < total){
 			    page = page+1
 			}else{
@@ -55,7 +53,7 @@ $(function(){
     		$.ajax({
     		       contentType:"application/json",
     	  	       type: "post",
-    	  	       url: "http://localhost:8880/findPage",
+    	  	       url: "http://47.106.186.255/findPage",
     	  	       data: JSON.stringify({"pageNumber":page,"pageSize" : size}),
     	  	       async:true,
     	 	       success: function(d){
@@ -67,14 +65,5 @@ $(function(){
     	 	       },
     	 	       dataType:"json"
     	    });
-	});
-})
-
-$(function(){
-	$("#btn1").click(function(){
-	    console.log("aaaa")
-	    var email = $("#input_mail").val();
-		console.log(email);
-
 	});
 })
