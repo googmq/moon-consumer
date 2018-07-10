@@ -1,6 +1,5 @@
 package cn.minqi.consumer.web;
 
-import cn.minqi.consumer.constant.Constant;
 import cn.minqi.consumer.entity.Picture;
 import cn.minqi.consumer.entity.User;
 import cn.minqi.consumer.majorService.EmailServiceImpl;

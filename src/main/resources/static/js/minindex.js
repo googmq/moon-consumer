@@ -9,7 +9,7 @@ $(function(){
                		$.ajax({
                		       contentType:"application/json",
                	  	       type: "post",
-               	  	       url: "http://47.106.186.255/mail",
+               	  	       url: "http://www.minqi.site/mail",
                	  	       data: JSON.stringify({"userEmail":email}),
                	  	       async:true,
                	 	       success: function(d){

@@ -5,7 +5,7 @@ var total = 1
 $.ajax({
         contentType:"application/json",
         type: "post",
-        url: "http://47.106.186.255/findPage",
+        url: "http://www.minqi.site/findPage",
         data: JSON.stringify({"pageNumber":page,"pageSize" : size}),
         async:true,
         success: function(d){
@@ -28,7 +28,7 @@ $(function(){
     		$.ajax({
     		       contentType:"application/json",
     	  	       type: "post",
-    	  	       url: "http://47.106.186.255/findPage",
+    	  	       url: "http://www.minqi.site/findPage",
     	  	       data: JSON.stringify({"pageNumber":page,"pageSize" : size}),
     	  	       async:true,
     	 	       success: function(d){
@@ -53,7 +53,7 @@ $(function(){
     		$.ajax({
     		       contentType:"application/json",
     	  	       type: "post",
-    	  	       url: "http://47.106.186.255/findPage",
+    	  	       url: "http://www.minqi.site/findPage",
     	  	       data: JSON.stringify({"pageNumber":page,"pageSize" : size}),
     	  	       async:true,
     	 	       success: function(d){
