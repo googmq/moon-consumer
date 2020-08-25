@@ -1,14 +1,14 @@
 package cn.minqi.consumer.model;
 
-import lombok.Data;
-
 import java.io.Serializable;
+import lombok.Data;
 
 /**
  * Response
  */
 @Data
 public class Response implements Serializable {
+
     /**
      * 请求结果
      */

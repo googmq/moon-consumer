@@ -1,5 +1,5 @@
 server:
-  port: 8880
+  port: 80
   undertow:
     io-threads: 2
     worker-threads: 200
@@ -15,8 +15,8 @@ spring:
     name: moon-consumer
   profiles:
     include:
-    - web
-    - locale
+      - web
+      - locale
   data:
     mongodb:
       uri: mongodb://localhost:27017/test
@@ -36,9 +36,9 @@ spring:
           timeout: 25000
 
 mybatis:
-  typeAliasesPackage : "cn.minqi.consumer.entity"
+  typeAliasesPackage: "cn.minqi.consumer.entity"
   #checkConfig-location : false
-  mapper-locations : "classpath:cn/minqi/consumer/mapper/xml/*Mapper.xml"
+  mapper-locations: "classpath:cn/minqi/consumer/mapper/xml/*Mapper.xml"
 
 
 logging:

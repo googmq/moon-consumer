@@ -4,24 +4,19 @@ package cn.minqi.consumer.majorService;
 import cn.minqi.consumer.constant.Constant;
 import cn.minqi.consumer.entity.User;
 import cn.minqi.consumer.model.BaseResponse;
-import cn.minqi.consumer.repository.PictureRepository;
 import cn.minqi.consumer.repository.UserRepository;
-import cn.minqi.consumer.util.CommonEnum;
 import com.alibaba.fastjson.JSONObject;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.FileSystemResource;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
-import javax.mail.internet.MimeMessage;
-import java.io.File;
 
 @Slf4j
 @Service
 public class EmailServiceImpl {
+
     @Autowired
     private JavaMailSender mailSender;
 
@@ -52,10 +47,10 @@ public class EmailServiceImpl {
             log.info("邮件已经发送。");
             User insert = userRepository.insert(user);
             log.info("插入的User：" + JSONObject.toJSONString(insert));
-            return CommonEnum.CODE_1000.getRespBase();
+            return null;
         } catch (Exception e) {
             log.error("发送邮件时发生异常！", e);
-            return CommonEnum.CODE_1010.getRespBase();
+            return null;
         }
 
     }

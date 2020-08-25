@@ -5,7 +5,7 @@ import lombok.Setter;
 
 /**
  * <p>
- *  分页查询请求包装类
+ * 分页查询请求包装类
  * </p>
  *
  * @author minqi

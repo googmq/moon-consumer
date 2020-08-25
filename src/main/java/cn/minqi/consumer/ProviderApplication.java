@@ -10,7 +10,7 @@ public class ProviderApplication {
 
     public static void main(String[] args) throws Exception {
         SpringApplication application = new SpringApplication(
-                ProviderApplication.class);
+            ProviderApplication.class);
         application.run(args);
     }
 

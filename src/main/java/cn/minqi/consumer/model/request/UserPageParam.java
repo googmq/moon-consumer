@@ -5,7 +5,7 @@ import lombok.Setter;
 
 /**
  * <p>
- *  分页查询请求包装类
+ * 分页查询请求包装类
  * </p>
  *
  * @author minqi
@@ -13,7 +13,8 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-public class UserPageParam{
+public class UserPageParam {
+
     private Integer pageNumber;
     private Integer pageSize;
     private Integer startRow;

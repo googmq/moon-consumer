@@ -1,12 +1,11 @@
 package cn.minqi.consumer.repository;
 
 import cn.minqi.consumer.entity.Picture;
+import java.util.List;
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-import java.util.List;
-
-public interface  PictureRepository extends MongoRepository<Picture, ObjectId> {
+public interface PictureRepository extends MongoRepository<Picture, ObjectId> {
 
     List<Picture> findByCategory(String category);
 

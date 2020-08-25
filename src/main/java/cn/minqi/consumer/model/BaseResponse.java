@@ -1,15 +1,13 @@
 package cn.minqi.consumer.model;
 
+import java.io.Serializable;
+import javax.persistence.MappedSuperclass;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.MappedSuperclass;
-import java.io.Serializable;
-
 /**
  * 接口返回基类
- *
  */
 @MappedSuperclass
 @Getter

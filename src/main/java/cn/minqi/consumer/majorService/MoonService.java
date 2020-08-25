@@ -25,18 +25,32 @@ public class MoonService {
     public BaseResponse queryDesc(Picture model) {
 //        List<Picture> list =  pictureRepository.findByCategory(model.getCategory());
 //        Long a = pictureRepository.count();
-        Picture picture= pictureRepository.findById(model.getId().toString());
+        Picture picture = pictureRepository.findById(model.getId().toString());
         log.info("查到的List：" + JSONObject.toJSONString(picture));
-        return new RespBase(picture);
+        return new RespBase<>(picture);
     }
 
     public BaseResponse add(Picture model) {
         Picture insert = pictureRepository.insert(model);
         log.info("插入的数据：" + JSONObject.toJSONString(insert));
-        return new RespBase(insert);
+        return new RespBase<>(insert);
     }
 
-    public BaseResponse queryAllByPage(PageRequest pageRequest){
-        return new RespBase(pictureRepository.findAll(pageRequest));
+    public BaseResponse queryAllByPage(PageRequest pageRequest) {
+        return new RespBase<>(pictureRepository.findAll(pageRequest));
+    }
+
+    public void testAnnotation(String value, Integer count, double result) throws Exception {
+        log.info("result : [{}] ", result);
+        if (result > 0.5) {
+            throw new Exception();
+        }
+    }
+
+
+    public void test1(Double time, String value) {
+
+        log.info("test1 : [{}]   value: [{}]", time, value);
+
     }
 }

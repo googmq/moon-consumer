@@ -1,5 +1,6 @@
 package cn.minqi.consumer.entity;
 
+import java.io.Serializable;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -7,21 +8,19 @@ import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.io.Serializable;
-
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author minqi
  * @since 2018-06-12
  */
-@Document(collection="vip")
+@Document(collection = "vip")
 @AllArgsConstructor
 @Setter
 @Getter
-public class User implements Serializable{
+public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -29,111 +28,111 @@ public class User implements Serializable{
      * id
      */
     @Id
-	private ObjectId id;
+    private ObjectId id;
     /**
      * 用户名字
      */
-	private String userName;
+    private String userName;
     /**
      * 用户手机号
      */
-	private String userPhone;
+    private String userPhone;
     /**
      * 用户电子邮件
      */
-	private String userEmail;
+    private String userEmail;
     /**
      * 用户密码
      */
-	private String userPassword;
+    private String userPassword;
     /**
      * 身份证号
      */
-	private String certificatesNumber;
+    private String certificatesNumber;
     /**
      * 银行卡号
      */
-	private String accountNumber;
+    private String accountNumber;
     /**
      * 微信号
      */
-	private String wechat;
+    private String wechat;
     /**
      * 用户头像
      */
-	private String avatar;
+    private String avatar;
     /**
      * 扩展字段1
      */
-	private String ext1User;
+    private String ext1User;
     /**
      * 扩展字段二
      */
-	private String ext2User;
+    private String ext2User;
     /**
      * 扩展字段三
      */
-	private String ext3User;
+    private String ext3User;
     /**
      * 扩展字段四
      */
-	private String ext4User;
+    private String ext4User;
     /**
      * 扩展字段五
      */
-	private String ext5User;
+    private String ext5User;
     /**
      * 备注
      */
-	private String remark;
+    private String remark;
     /**
      * 创建时间
      */
-	private Long createdTime;
+    private Long createdTime;
     /**
      * 更新时间
      */
-	private Long updatedTime;
+    private Long updatedTime;
     /**
      * 创建人
      */
-	private Long createdBy;
+    private Long createdBy;
     /**
      * 修改人
      */
-	private Long updatedBy;
+    private Long updatedBy;
     /**
      * 是否删除
      */
-	private String deleted;
+    private String deleted;
     /**
      * 省份名称
      */
-	private String province;
+    private String province;
     /**
      * 城市名称
      */
-	private String city;
+    private String city;
     /**
      * 地区名称
      */
-	private String district;
+    private String district;
     /**
      * 详情地址
      */
-	private String detailAddress;
+    private String detailAddress;
     /**
      * 省份
      */
-	private String provinceCode;
+    private String provinceCode;
     /**
      * 城市
      */
-	private String cityCode;
+    private String cityCode;
     /**
      * 地区
      */
-	private String districtCode;
+    private String districtCode;
 
 
 }

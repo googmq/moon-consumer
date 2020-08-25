@@ -1,5 +1,7 @@
 package cn.minqi.consumer.web;
 
+import cn.minqi.consumer.annotation.TestAnnotation;
+import cn.minqi.consumer.bo.TestBo;
 import cn.minqi.consumer.entity.Picture;
 import cn.minqi.consumer.entity.User;
 import cn.minqi.consumer.majorService.EmailServiceImpl;
@@ -45,7 +47,8 @@ public class MoonController {
     @RequestMapping(value = "/findPage", method = RequestMethod.POST)
     public BaseResponse findPage(@RequestBody PicturePageParam request) {
         log.info("findPage入口");
-        PageRequest pageRequest = new PageRequest(request.getPageNumber()-1,request.getPageSize());
+        PageRequest pageRequest = new PageRequest(request.getPageNumber() - 1,
+            request.getPageSize());
 
         log.info("findPage入参 :" + JSONObject.toJSONString(request));
         BaseResponse response = moonService.queryAllByPage(pageRequest);
@@ -58,5 +61,13 @@ public class MoonController {
         log.info("mail入口");
         log.info("mail入参 :" + JSONObject.toJSONString(user));
         return emailService.sendSimpleMail(user);
+    }
+
+    @TestAnnotation(value = "testA", count = 100, timeout = "")
+    @RequestMapping(value = "/testAnnotation", method = RequestMethod.GET)
+    public BaseResponse testAnnotation(@RequestBody TestBo time) {
+        log.info("testAnnotation入口");
+        moonService.test1(time.getTime(), time.getValue());
+        return new BaseResponse();
     }
 }
