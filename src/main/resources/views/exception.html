@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>exception</title>
+  <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            background: url('https://external-preview.redd.it/WqeQwbSuFL9CMYHrz8a0cx1I9HmT26JdGq6HToKDgMY.jpg?auto=webp&s=4751f67a8548662d148a8a8417753797622a991c') no-repeat 0px 0px;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            -moz-background-size: 100% 100%;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        #backToLoginDiv {
+            width: 37%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+            background-color: rgba(75, 81, 95, 0.3);
+            box-shadow: 7px 7px 17px rgba(52, 56, 66, 0.5);
+            border-radius: 5px;
+        }
+
+        #name_trip {
+            margin-left: 50px;
+            color: red;
+        }
+
+        p {
+            margin-top: 30px;
+            margin-left: 20px;
+            color: azure;
+        }
+
+        input {
+            margin-left: 15px;
+            border-radius: 5px;
+            border-style: hidden;
+            height: 30px;
+            width: 140px;
+            background-color: rgba(216, 191, 216, 0.5);
+            outline: none;
+            color: #f0edf3;
+            padding-left: 5px;
+        }
+
+        .button {
+            border-color: cornsilk;
+            background-color: rgba(100, 149, 237, .7);
+            color: aliceblue;
+            border-style: hidden;
+            border-radius: 5px;
+            width: 100px;
+            height: 31px;
+            font-size: 16px;
+        }
+
+
+
+  </style>
+</head>
+
+<body>
+<div id="backToLoginDiv">
+  <div id="back">
+    <h2 style="text-align: center;color: aliceblue;">账号或密码错误,请确认后重新登录.</h2>
+    <h1 style="text-align: center;color: aliceblue;" onclick="backToLogin()">返回登录</h1>
+  </div>
+</div>
+
+</body>
+<script>
+    function backToLogin() {
+      window.location.href='http://localhost:2333/login';
+    }
+
+</script>
+</html>

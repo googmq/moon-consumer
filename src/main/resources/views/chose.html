@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>导航页</title>
+  <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            background: url('https://external-preview.redd.it/WqeQwbSuFL9CMYHrz8a0cx1I9HmT26JdGq6HToKDgMY.jpg?auto=webp&s=4751f67a8548662d148a8a8417753797622a991c') no-repeat 0px 0px;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            -moz-background-size: 100% 100%;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .button {
+            border-color: cornsilk;
+            background-color: rgba(100, 149, 237, .7);
+            color: aliceblue;
+            border-style: hidden;
+            border-radius: 30px;
+            width: 100px;
+            height: 80px;
+            font-size: 18px;
+            float:left
+        }
+
+
+  </style>
+</head>
+
+<body>
+<div style="text-align: center; line-height:80px;">
+  <div class="button" onclick="jump('http://minqiwudian.xyz:7664')">路由器</div>
+  <div class="button" onclick="jump('http://minqiwudian.xyz:7662')">服务器</div>
+  <div class="button" onclick="jump('http://minqiwudian.xyz:7665/vnc.html')">内网浏览器</div>
+  <div class="button" onclick="jump('http://minqiwudian.xyz:7666')">网盘</div>
+  <div class="button" onclick="jump('http://minqiwudian.xyz:7667')">看电影</div>
+  <div class="button" onclick="jump('http://minqiwudian.xyz:7663')">下电影</div>
+  <div class="button" onclick="jump('https://pterclub.com/torrents.php')">猫站</div>
+  <div class="button" onclick="jump('https://pt.btschool.club')">bt</div>
+</div>
+
+</body>
+<script>
+    function jump(site) {
+        window.open(site);
+    };
+
+</script>
+</html>

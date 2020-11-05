@@ -1,45 +1,15 @@
 server:
-  port: 80
+  port: 2333
   undertow:
     io-threads: 2
     worker-threads: 200
 
 spring:
-  mvc:
-    favicon:
-      enabled: false
-    view:
-      prefix: /
-      suffix: .html
   application:
     name: moon-consumer
-  profiles:
-    include:
-      - web
-      - locale
-  data:
-    mongodb:
-      uri: mongodb://localhost:27017/test
-  mail:
-    host: smtp.qq.com
-    port: 465
-    username: 357444224@qq.com
-    password: ukecrawoanancaaa
-    properties:
-      mail:
-        smtp:
-          socketFactory:
-            port: 465
-            class: javax.net.ssl.SSLSocketFactory
-            fallback: false
-          auth: true
-          timeout: 25000
-
-mybatis:
-  typeAliasesPackage: "cn.minqi.consumer.entity"
-  #checkConfig-location : false
-  mapper-locations: "classpath:cn/minqi/consumer/mapper/xml/*Mapper.xml"
-
+  thymeleaf:
+    prefix: classpath:/views/
+    cache: false
 
 logging:
   level:
@@ -49,3 +19,15 @@ logging:
     console: "%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %highlight(%-5level) %cyan(%logger{36})  - %msg%n"
     file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
   file: logs/application.log
+
+config:
+  user: eb3dcda7e8ada79c123d74ea5a8c02ac
+  baseEncodeStr: seven
+  splitStr: "&"
+
+# swagger API文档
+swagger:
+  enabled: true
+  title: API文档
+  version: 1.0.0
+  base-package: cn.minqi.consumer.web
