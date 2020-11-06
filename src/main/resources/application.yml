@@ -11,6 +11,12 @@ spring:
     prefix: classpath:/views/
     cache: false
 
+  redis:
+    port: 7671
+    host: minqiwudian.xyz
+    database: 0
+    timeout: 2s
+
 logging:
   level:
     org.springframework.web: INFO

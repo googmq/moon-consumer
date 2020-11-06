@@ -1,9 +1,9 @@
 package cn.minqi.consumer.web;
 
-import cn.minqi.consumer.config.ServiceConfig;
-import cn.minqi.consumer.util.StringEncoder;
+import cn.minqi.consumer.util.RedisClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class IndexController {
 
     @Autowired
-    private ServiceConfig config;
+    private RedisClient redisClient;
 
     /**
      * 自定义登录界面
@@ -43,15 +43,10 @@ public class IndexController {
      */
     @GetMapping("/chose")
     public String chose(@RequestParam String token) {
-        try {
-            String decodeStr = StringEncoder.decodeByXOR(token, config.getBaseEncodeStr());
-            String[] split = decodeStr.split(config.getSplitStr());
-            if (config.getBaseEncodeStr().equals(split[0])) {
-                return "chose";
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
+        String str = redisClient.get(token);
+        if (StringUtils.isEmpty(str)) {
+            return "exception";
         }
-        return "exception";
+        return "chose";
     }
 }
