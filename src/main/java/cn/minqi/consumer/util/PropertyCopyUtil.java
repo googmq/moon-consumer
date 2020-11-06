@@ -12,7 +12,6 @@ import org.springframework.util.StringUtils;
 
 /**
  * 基于reflectasm高性能反射工具包的属性复制实现，支持NULL过滤特性。
- * 如果对性能要求更高，且无NULL过滤需要，请使用FastPropertyCopyUtil.
  *
  * @author minqi
  */
