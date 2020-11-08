@@ -1,8 +1,6 @@
 package cn.minqi.consumer.bo.base;
 
 
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.springframework.util.StringUtils;
@@ -15,7 +13,6 @@ import org.springframework.util.StringUtils;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-@ApiModel("响应结果")
 public class RespBase<T> extends JsonBase {
 
     /**
@@ -32,13 +29,10 @@ public class RespBase<T> extends JsonBase {
      */
     public static final RespBase<Void> OK_RESP_BASE = new RespBase<>();
 
-    @ApiModelProperty("错误代码")
     private int code;
 
-    @ApiModelProperty("错误消息")
     private String msg;
 
-    @ApiModelProperty("响应结果数据对象")
     private T data;
 
     public RespBase() {
