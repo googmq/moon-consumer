@@ -6,7 +6,6 @@ import java.util.Map;
 import javax.validation.constraints.Min;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.hibernate.validator.constraints.Range;
 
 /**
  * 分页请求
@@ -17,7 +16,6 @@ import org.hibernate.validator.constraints.Range;
 @EqualsAndHashCode(callSuper = false)
 public class ReqPage extends JsonBase {
 
-    @Range(min = 1, max = 100, message = "分页大小必须在1～100之间")
     private int limit;
 
     @Min(value = 0, message = "偏移量不能小于0")

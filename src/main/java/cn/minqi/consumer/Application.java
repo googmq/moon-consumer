@@ -1,5 +1,6 @@
 package cn.minqi.consumer;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -7,8 +8,8 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 /**
  * @author minqi
  */
-@SpringBootApplication(scanBasePackages = "cn.minqi.consumer")
-@EntityScan(basePackages = "cn.minqi.consumer.*")
+@SpringBootApplication
+@MapperScan("cn.minqi.consumer.persistence.mapper")
 public class Application {
 
     /**

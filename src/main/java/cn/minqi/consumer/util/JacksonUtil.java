@@ -173,35 +173,6 @@ public final class JacksonUtil {
     }
 
     /**
-     * 将json字符串转换为包含多个java bean值的map对象
-     *
-     * @param jsonString json序列化字符串
-     * @param clazz      map中的value类
-     * @param <T>        value类的范型
-     * @return 如果反序列化成功，则返回map对象，否则返回NULL
-     */
-    public static <T> Map<String, T> json2Map(String jsonString, Class<T> clazz) {
-        if (StringUtils.isEmpty(jsonString)) {
-            return null;
-        }
-
-        try {
-            Map<String, Map<String, Object>> map = MAPPER.readValue(jsonString,
-                    new TypeReference<Map<String, T>>() {
-                    });
-            Map<String, T> result = new HashMap<>();
-            for (Map.Entry<String, Map<String, Object>> entry : map.entrySet()) {
-                result.put(entry.getKey(), map2Bean(entry.getValue(), clazz));
-            }
-            return result;
-        } catch (Exception e) {
-            log.error("反序列化失败: {}, 错误: {}", jsonString, e.getMessage(), e);
-            return null;
-        }
-    }
-
-
-    /**
      * 将map对象转换为java Bean对象
      *
      * @param map   map对象
