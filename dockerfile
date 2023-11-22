@@ -1,9 +1,11 @@
-FROM tomcat:tomcat:9.0.83-jdk17-corretto-al2
+FROM openjdk:17.0.2
+
+WORKDIR /data
 
 MAINTAINER d@mail.com
 
-ADD ./target/xx.war /usr/local/tomcat/webapps/
+COPY ./target/moon-consumer-1.0.0.jar /data/moon.jar
 
 EXPOSE 8080
 
-ENTRYPOINT ["/usr/local/tomcat/bin/catalina.sh","run"]
+CMD ["java","-jar","/data/moon.jar"]

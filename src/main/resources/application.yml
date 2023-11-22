@@ -16,30 +16,30 @@ spring:
   thymeleaf:
     prefix: classpath:/views/
     cache: false
-  datasource:
-    type: com.alibaba.druid.pool.DruidDataSource
-    driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/moon?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
-    username: root
-    password: root
-    druid:
-      # 初始化大小，最小，最大
-      initial-size: 5
-      min-idle: 5
-      max-active: 20
-      # 配置获取连接等待超时的时间
-      max-wait: 60000
-      # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位毫秒
-      time-between-eviction-runs-millis: 60000
-      # 配置一个连接在池中最小生存时间
-      min-evictable-idle-time-millis: 300000
-      validation-query: SELECT 1 FROM DUAL
-      test-while-idle: true
-      test-on-borrow: false
-      test-on-return: false
-      # 打开 PSCache，并且指定每个连接上 PSCache 的大小
-      pool-prepared-statements: true
-      max-pool-prepared-statement-per-connection-size: 20
+#  datasource:
+#    type: com.alibaba.druid.pool.DruidDataSource
+#    driverClassName: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/moon?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+#    username: root
+#    password: root
+#    druid:
+#      # 初始化大小，最小，最大
+#      initial-size: 5
+#      min-idle: 5
+#      max-active: 20
+#      # 配置获取连接等待超时的时间
+#      max-wait: 60000
+#      # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位毫秒
+#      time-between-eviction-runs-millis: 60000
+#      # 配置一个连接在池中最小生存时间
+#      min-evictable-idle-time-millis: 300000
+#      validation-query: SELECT 1 FROM DUAL
+#      test-while-idle: true
+#      test-on-borrow: false
+#      test-on-return: false
+#      # 打开 PSCache，并且指定每个连接上 PSCache 的大小
+#      pool-prepared-statements: true
+#      max-pool-prepared-statement-per-connection-size: 20
 
   # Sharding-JDBC的配置
 #  shardingsphere:

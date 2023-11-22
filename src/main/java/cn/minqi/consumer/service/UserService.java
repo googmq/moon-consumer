@@ -3,7 +3,7 @@ package cn.minqi.consumer.service;
 import cn.minqi.consumer.config.ServiceConfig;
 import cn.minqi.consumer.config.exception.ServiceException;
 import cn.minqi.consumer.persistence.entity.User;
-import cn.minqi.consumer.persistence.mapper.UserMapper;
+//import cn.minqi.consumer.persistence.mapper.UserMapper;
 import cn.minqi.consumer.util.MD5Util;
 import cn.minqi.consumer.util.RedisClient;
 import lombok.extern.slf4j.Slf4j;
@@ -28,8 +28,8 @@ public class UserService {
     @Autowired
     private ServiceConfig config;
 
-    @Autowired
-    private UserMapper userMapper;
+//    @Autowired
+//    private UserMapper userMapper;
 
     public String login(String account, String password) throws ServiceException {
         if (!StringUtils.isEmpty(account)
@@ -46,13 +46,13 @@ public class UserService {
     }
 
     public User findByUserId(Long id) {
-        List<User> userList = userMapper.selectList(null);
-        userList.forEach(System.out::println);
+//        List<User> userList = userMapper.selectList(null);
+//        userList.forEach(System.out::println);
         return null;
     }
 
     @Transactional
     public void insertUser(User user) {
-        userMapper.insert(user);
+//        userMapper.insert(user);
     }
 }
