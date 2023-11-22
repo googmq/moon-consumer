@@ -4,6 +4,7 @@ import cn.minqi.consumer.bo.base.RespBase;
 import cn.minqi.consumer.config.exception.ServiceException;
 import cn.minqi.consumer.persistence.entity.User;
 import cn.minqi.consumer.service.UserService;
+import com.google.common.collect.Lists;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -31,13 +34,22 @@ public class UserController {
     }
 
     @RequestMapping(value = "/test", method = RequestMethod.GET)
-    public RespBase<RecordDTO> test() {
+    public RespBase<List<RecordDTO>> test() {
 //        userService.findByUserId(null);
-        RecordDTO recordDTO = new RecordDTO();
         Random random = new Random();
-        recordDTO.setName("name" + random.nextInt());
+        int j = random.nextInt(3);
+        List<RecordDTO> objects = Lists.newArrayList();
+        for (int i = 0; i < j; i++) {
+            RecordDTO recordDTO = new RecordDTO();
+            recordDTO.setName("name" + i);
+            recordDTO.setType(1);
+            objects.add(recordDTO);
+        }
+        RecordDTO recordDTO = new RecordDTO();
+        recordDTO.setName("name初始的" );
         recordDTO.setType(1);
-        return new RespBase<>(recordDTO);
+        objects.add(recordDTO);
+        return new RespBase<>(objects);
     }
 
     @Data
